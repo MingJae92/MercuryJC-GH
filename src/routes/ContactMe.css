@@ -1,0 +1,27 @@
+p{
+    font-family: 'Permanent Marker', cursive;
+    margin: 1em;
+}
+
+
+img{
+    height: 80vh;
+    width: auto;
+}
+
+label{
+    display: block;
+    margin: 0.25em;
+    font-family: 'Permanent Marker', cursive;
+    float: left;
+}
+
+input{
+    width: 100%;
+}
+
+button{
+    margin: 1em;
+    font-family: 'Permanent Marker', cursive;
+}
+

@@ -1,0 +1,16 @@
+body{
+    /* background-color: rgba(72, 6, 105, 0.78); */
+}
+
+img {
+    height: 80vh;
+    width: 100vw;
+    padding:0;
+    }
+
+h1{
+    padding: 32px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+

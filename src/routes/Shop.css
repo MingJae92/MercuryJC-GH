@@ -1,0 +1,21 @@
+.shop-items{
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0.5em;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 0.5fr);
+}
+
+h6{
+    font-family: 'Permanent Marker', cursive;
+}
+
+@media screen and (max-width:500px) {
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 0.5fr);
+    }
+}
