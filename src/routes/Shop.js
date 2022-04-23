@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from './Footer'
 import ShopItems from './ShopItems'
 import "./Shop.css"
-import {BrowserRouter, Route, Router, Link} from "react-router-dom"
+import { Link} from "react-router-dom"
 
 const Shop = () => {
   
@@ -14,15 +14,15 @@ const Shop = () => {
     </div>
         
       <div className='grid'>
-          {ShopItems.map(ShopItems=>
-          <div>
-            <h6>{ShopItems.name}</h6>
-            {/* <h6>{ShopItems.id}</h6> */}
-            <Link to='/'>
+          {ShopItems.map((Items, index)=>
+          <div key={index}>
+            <Link to={Items.path}><h6>{Items.name}</h6></Link> 
+            
+            
             <img className='shop-items'
-                  src={ShopItems.img}
+                  src={Items.img}
                 />
-            </Link>
+            
            
             
           </div>)}
@@ -35,12 +35,5 @@ const Shop = () => {
 
 export default Shop
 
-{/* {ShopItems.map((src, ShopItems)=>
-        <img className='shop-items'
-          src={src}
-          
-          
-      />
-      )} */}
 
 
