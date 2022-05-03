@@ -1,17 +1,41 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Kda.css"
-import Kda1 from "../ShopItems/kda1.jpg"
-import Kda2 from "../ShopItems/kda2.jpg"
-import Kda3 from "../ShopItems/kda3.jpg"
+import KdaImage from './KdaImage'
+import ImageViewer from "react-simple-image-viewer"
+
 
 
 const Kda = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>K/DA Inspired Stream</h1>
-      <img src={Kda1}/>
-      <img src={Kda2}/>
-      <img src={Kda3}/>
+      {KdaImage.map((src, index)=>(
+        <img
+          className='kda_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={KdaImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
 
 
     </div>

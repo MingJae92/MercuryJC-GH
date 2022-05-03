@@ -1,16 +1,40 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Gie.css"
-import Gie1 from "../ShopItems/gie1.jpg"
-import Gie2 from "../ShopItems/gie2.jpg"
+import GieImage from "./GieImage"
+import ImageViewer from "react-simple-image-viewer"
 
 
 const Gie = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>Genshin Impact Music Clear Acrylic Charm - EULA</h1>
-      <img src={Gie1}/>
-      <img src={Gie2}/>
-
+      {GieImage.map((src, index)=>(
+        <img
+          className='gie_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={GieImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
     </div>
   )
 }

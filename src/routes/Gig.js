@@ -1,18 +1,41 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Gig.css"
-import Gig1 from "../ShopItems/gig1.jpg"
-import Gig2 from "../ShopItems/gig2.jpg"
-import Gig3 from "../ShopItems/gig3.jpg"
-import Gig4 from "../ShopItems/gig4.jpg"
+import ImageViewer from "react-simple-image-viewer"
+import GigImage from "./GigImage"
+
+
 
 const Gig = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>Genshin Impact Music Clear Acrylic Charm - GANYU</h1>
-      <img src={Gig1}/>
-      <img src={Gig2}/>
-      <img src={Gig3}/>
-      <img src={Gig4}/>
+      {GigImage.map((src, index)=>(
+        <img
+        className='gig_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={GigImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
     </div>
   )
 }

@@ -1,14 +1,39 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Mahvs.css"
-import Mahvs1 from "../ShopItems/mahvs1.jpg"
-import Mahvs2 from "../ShopItems/mahvs2.jpg"
+import MahvsImage from "./MahvsImage"
+import ImageViewer from "react-simple-image-viewer"
 
 const Mahvs = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>Moonboat Adventure Holographic Vinyl Sticker</h1>
-      <img src={Mahvs1}/>
-      <img src={Mahvs2}/>
+      {MahvsImage.map((src, index)=>(
+        <img
+          className='mahvs_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={MahvsImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
     </div>
   )
 }

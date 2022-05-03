@@ -1,15 +1,41 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Upmsb.css"
-import Upmdb1 from "../ShopItems/upmsb1.jpg"
-import Upmdb2 from "../ShopItems/upmsb2.jpg"
+import UpmsbImage from './UpmsbImage'
+import ImageViewer from "react-simple-image-viewer"
+
 
 
 const Upmsb = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>Usagi Pastel Moon Subscriber Badges</h1>
-      <img src={Upmdb1}/>
-      <img src={Upmdb2}/>
+      {UpmsbImage.map((src, index)=>(
+        <img
+          className='upmsb_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={UpmsbImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
     </div>
   )
 }

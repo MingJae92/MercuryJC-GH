@@ -1,15 +1,40 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Gikam.css"
-import Gikam1 from "../ShopItems/gikam1.jpg"
-import Gikam2 from "../ShopItems/gikam2.jpg"
+import ImageViewer from "react-simple-image-viewer"
+import GikamImage from './GikamImage'
 
 
 const Gikam = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>Genshin-Impact-Music-Clear-Acrylic-Charm-KAMISATO-AYAKA</h1>
-      <img src={Gikam1}/>
-      <img src={Gikam2}/>
+      {GikamImage.map((src, index)=>(
+        <img
+          className='gikam_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={GikamImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
 
     </div>
   )

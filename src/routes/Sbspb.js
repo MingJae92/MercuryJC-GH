@@ -1,14 +1,40 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Sbspb.css"
-import Sbspb1 from "../ShopItems/sbspb1.jpg"
-import Sbspb2 from "../ShopItems/sbspb2.jpg"
+import SbsbImage from './SbsbImage'
+import ImageViewer from "react-simple-image-viewer"
+
 
 const Sbspb = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>Sakura Blossom Stream Package B</h1>
-      <img src={Sbspb1}/>
-      <img src={Sbspb2}/>
+      {SbsbImage.map((src, index)=>(
+        <img
+          className='sbspb_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={SbsbImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
 
     </div>
   )
