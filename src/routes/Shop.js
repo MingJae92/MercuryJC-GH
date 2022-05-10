@@ -3,6 +3,7 @@ import Footer from './Footer'
 import ShopItems from './ShopItems'
 import "./Shop.css"
 import { Link} from "react-router-dom"
+import ScrollToTop from './ScrollToTop'
 
 const Shop = () => {
   
@@ -27,7 +28,7 @@ const Shop = () => {
             
           </div>)}
       </div>
-        
+      <ScrollToTop/>
       <Footer/>
     </div>
   )

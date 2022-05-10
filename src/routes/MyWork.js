@@ -3,7 +3,7 @@ import "./MyWork.css";
 import ImageViewer from "react-simple-image-viewer";
 import Gallery from './Gallery';
 import Footer from './Footer'
-
+import ScrollToTop from './ScrollToTop';
 
 // const imageNames=[
 //   {"name":"Ayato"},
@@ -57,6 +57,8 @@ const MyWork = () => {
           closeOnClickOutside={true}
           />
       )}
+     
+    <ScrollToTop/>
     <Footer/>
     </div>
   )
