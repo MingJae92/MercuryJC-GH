@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Gie.css"
 import GieImage from "./GieImage"
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
 
 
 const Gie = () => {
@@ -35,6 +36,7 @@ const Gie = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

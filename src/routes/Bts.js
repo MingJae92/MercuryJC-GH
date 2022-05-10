@@ -2,6 +2,8 @@ import "./Bts.css"
 import BtsImage from "./BtsImage"
 import ImageViewer from "react-simple-image-viewer"
 import { useCallback, useState } from "react"
+import Footer from './Footer'
+
 
 const Bts = () => {
   const [currentImage, setCurrentImage]=useState(0);
@@ -33,6 +35,7 @@ const Bts = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

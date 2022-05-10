@@ -2,8 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Gig.css"
 import ImageViewer from "react-simple-image-viewer"
 import GigImage from "./GigImage"
-
-
+import Footer from './Footer'
 
 const Gig = () => {
 
@@ -36,6 +35,7 @@ const Gig = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

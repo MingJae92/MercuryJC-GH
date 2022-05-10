@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Sssb.css"
 import ImageViewer from "react-simple-image-viewer"
 import SssbImage from './SssbImage'
+import Footer from './Footer'
 
 
 const Sssb = () => {
@@ -36,7 +37,7 @@ const Sssb = () => {
       />)
       }
      
-
+    <Footer/>
     </div>
   )
 }

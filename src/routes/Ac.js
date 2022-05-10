@@ -3,6 +3,8 @@ import "./Ac.css"
 // import Ac1 from "../ShopItems/ac.jpg"
 import AcImage from './AcImage'
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
+
 
 const Ac = () => {
   
@@ -35,6 +37,7 @@ const Ac = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

@@ -2,6 +2,8 @@ import React, {  useState,useCallback } from 'react'
 import "./Sbspa.css"
 import ImageViewer from "react-simple-image-viewer"
 import SbspaImage from './SpspaImage'
+import Footer from './Footer'
+
 
 const Sbspa = () => {
 
@@ -34,6 +36,7 @@ const Sbspa = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

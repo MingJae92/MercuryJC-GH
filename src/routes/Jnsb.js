@@ -1,8 +1,9 @@
 import React, {  useState,useCallback } from 'react'
 import "./Jnsb.css"
-import Jnsb1 from "../ShopItems/jnsb.jpg"
 import ImageViewer from "react-simple-image-viewer"
 import JnsbImage from "./JnsbImage"
+import Footer from './Footer'
+
 
 const Jnsb = () => {
 
@@ -35,6 +36,7 @@ const Jnsb = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

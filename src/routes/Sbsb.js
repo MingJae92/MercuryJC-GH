@@ -1,11 +1,8 @@
 import React, {  useState,useCallback } from 'react'
 import "./Sbsb.css"
-import Sbsb1 from "../ShopItems/sbsb1.jpg"
-import Sbsb2 from "../ShopItems/sbsb2.jpg"
 import SbsbImage from "./SbsbImage"
 import ImageViewer from "react-simple-image-viewer"
-
-
+import Footer from './Footer'
 
 const Sbsb = () => {
 
@@ -38,7 +35,7 @@ const Sbsb = () => {
         onClose={closeImageViewer}
       />)
       }
-
+    <Footer/>
     </div>
   )
 }

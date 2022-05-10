@@ -1,8 +1,8 @@
 import React, {  useState,useCallback } from 'react'
 import "./Giwp.css" 
-import Giwp1 from "../ShopItems/giwp.jpg"
 import GiwpImage from "./GiwpImage"
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
 
 
 const Giwp = () => {
@@ -36,6 +36,7 @@ const Giwp = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

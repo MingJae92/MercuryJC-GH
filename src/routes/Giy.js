@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Giy.css"
 import GiyImage from './GiyImages'
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
 
 
 const Giy = () => {
@@ -35,6 +36,7 @@ const Giy = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

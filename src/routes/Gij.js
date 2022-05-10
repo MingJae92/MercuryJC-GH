@@ -1,11 +1,8 @@
 import React, {  useState,useCallback } from 'react'
 import "./Gij.css"
-import Gij1 from "../ShopItems/gij1.jpg"
-import Gij2 from "../ShopItems/gij2.jpg"
 import GijImage from "./GijImage"
 import ImageViewer from "react-simple-image-viewer"
-
-
+import Footer from './Footer'
 
 const Gij = () => {
 
@@ -38,7 +35,7 @@ const Gij = () => {
         onClose={closeImageViewer}
       />)
       }
-
+    <Footer/>
     </div>
   )
 }

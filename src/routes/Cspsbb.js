@@ -2,6 +2,8 @@ import React, {useState, useCallback} from 'react'
 import "./Cspsbb.css"
 import CspsbbImage from './CspsbbImage'
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
+
 
 const Cspsbb = () => {
   const [currentImage, setCurrentImage]=useState(0);
@@ -33,6 +35,7 @@ const Cspsbb = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

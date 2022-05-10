@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Sbspb.css"
 import SbsbImage from './SbsbImage'
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
 
 
 const Sbspb = () => {
@@ -35,7 +36,7 @@ const Sbspb = () => {
         onClose={closeImageViewer}
       />)
       }
-
+    <Footer/>
     </div>
   )
 }

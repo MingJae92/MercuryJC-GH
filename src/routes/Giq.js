@@ -2,6 +2,8 @@ import React, {  useState,useCallback } from 'react'
 import "./Giq.css"
 import ImageViewer from "react-simple-image-viewer"
 import GiqImage from "./GiqImage"
+import Footer from './Footer'
+
 
 const Giq = () => {
 
@@ -34,7 +36,7 @@ const Giq = () => {
         onClose={closeImageViewer}
       />)
       }
-
+    <Footer/>
     </div>
   )
 }

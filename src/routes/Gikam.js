@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Gikam.css"
 import ImageViewer from "react-simple-image-viewer"
 import GikamImage from './GikamImage'
+import Footer from './Footer'
 
 
 const Gikam = () => {
@@ -35,7 +36,7 @@ const Gikam = () => {
         onClose={closeImageViewer}
       />)
       }
-
+    <Footer/>
     </div>
   )
 }

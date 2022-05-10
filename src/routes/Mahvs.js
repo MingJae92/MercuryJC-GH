@@ -2,6 +2,8 @@ import React, {  useState,useCallback } from 'react'
 import "./Mahvs.css"
 import MahvsImage from "./MahvsImage"
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
+
 
 const Mahvs = () => {
 
@@ -34,6 +36,7 @@ const Mahvs = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

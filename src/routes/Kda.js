@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Kda.css"
 import KdaImage from './KdaImage'
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
 
 
 
@@ -37,7 +38,7 @@ const Kda = () => {
       />)
       }
 
-
+    <Footer/>
     </div>
   )
 }

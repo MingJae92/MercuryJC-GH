@@ -23,9 +23,7 @@ const Shop = () => {
             <img className='shop-items'
                   src={Items.img}
                 />
-            
-           
-            
+          
           </div>)}
       </div>
       <ScrollToTop/>

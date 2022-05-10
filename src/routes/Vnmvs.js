@@ -1,20 +1,42 @@
-import React from 'react'
+import React, {  useState,useCallback } from 'react'
 import "./Vnmvs.css"
-import Vnmvs1 from "../ShopItems/vnmvs1.jpg"
-import Vnmvs2 from "../ShopItems/vnmvs2.jpg"
-import Vnmvs3 from "../ShopItems/vnmvs3.jpg"
-import Vnmvs4 from "../ShopItems/vnmvs4.jpg"
-import Vnmvs5 from "../ShopItems/vnmvs5.jpg"
+import VnmvsImage from './VnmvsImage'
+import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
+
 
 const Vnmvs = () => {
+
+  const [currentImage, setCurrentImage]=useState(0);
+  const [isViewerOpen, setIsViewerOpen]=useState(false);
+
+  const openImageViewer = useCallback((index)=>{
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  },[]);
+
+  const closeImageViewer=()=>{
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
   return (
     <div>
       <h1>Vitasoy Neko Matte Vinyl Stickers</h1>
-      <img src={Vnmvs1}/>
-      <img src={Vnmvs2}/>
-      <img src={Vnmvs3}/>
-      <img src={Vnmvs4}/>
-      <img src={Vnmvs5}/>
+      {VnmvsImage.map((src, index)=>(
+        <img
+          className='vnmvs_img'
+          src={src}
+          onClick={()=>openImageViewer(index)}
+          key={index}
+          />
+      ))}
+      {isViewerOpen&&(<ImageViewer
+        src={VnmvsImage}
+        currentIndex={currentImage}
+        onClose={closeImageViewer}
+      />)
+      }
+    <Footer/>
     </div>
   )
 }

@@ -1,9 +1,8 @@
 import React, {useState, useCallback} from 'react'
 import "./Ddhvs.css"
-import Ddhvs1 from "../ShopItems/ddhvs1.jpg"
-import Ddhvs2 from "../ShopItems/ddhvs2.jpg"
 import DdhvsImage from "./DdhvsImage"
 import ImageViewer from "react-simple-image-viewer"
+import Footer from './Footer'
 
 
 const Ddhvs = () => {
@@ -36,7 +35,7 @@ const Ddhvs = () => {
         onClose={closeImageViewer}
       />)
       }
-
+    <Footer/>
     </div>
   )
 }

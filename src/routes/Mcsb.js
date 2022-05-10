@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Mcsb.css"
 import ImageViewer from "react-simple-image-viewer"
 import McsbImage from "./McsbImage"
+import Footer from './Footer'
 
 
 const Mcsb = () => {
@@ -35,6 +36,7 @@ const Mcsb = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

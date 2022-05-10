@@ -1,8 +1,9 @@
 import React, {  useState,useCallback } from 'react'
 import "./Gic.css"
-
 import ImageViewer from "react-simple-image-viewer"
 import GicImage from './GicImage'
+import Footer from './Footer'
+
 
 const Gic = () => {
 
@@ -35,6 +36,7 @@ const Gic = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }

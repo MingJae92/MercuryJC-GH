@@ -2,6 +2,7 @@ import React, {  useState,useCallback } from 'react'
 import "./Giz.css"
 import ImageViewer from "react-simple-image-viewer"
 import GizImage from './GizImage'
+import Footer from './Footer'
 
 
 const Giz = () => {
@@ -35,6 +36,7 @@ const Giz = () => {
         onClose={closeImageViewer}
       />)
       }
+    <Footer/>
     </div>
   )
 }
